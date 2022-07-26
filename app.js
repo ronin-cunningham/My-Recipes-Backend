@@ -22,19 +22,7 @@ var recipesRouter = require('./routes/recipes');
 
 var app = express();
 
-const whitelist = ["https://ronin-react-recipe-website.herokuapp.com/"]
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error("Not allowed by CORS"))
-    }
-  },
-  credentials: true,
-}
-app.use(cors(corsOptions))
-
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
