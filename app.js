@@ -7,7 +7,7 @@ const cors = require('cors')
 const mongoose = require("mongoose");
 const generateData = require('./mongodb/generate-data');
 
-mongoose.connect('mongodb://localhost:27017/sandbox');
+mongoose.connect('mongodb+srv://m001-student:m001-mongodb-basics@sandbox.vmrom.mongodb.net/?retryWrites=true&w=majority');
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
